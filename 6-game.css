@@ -1,0 +1,119 @@
+
+
+body {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #18c8cb, #12ce60);
+  background-size: 400% 400%;
+  animation: gradient 20s ease infinite;
+  
+}
+
+h1 {
+  font-family: monospace;
+  font-style:normal;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+h2 {
+  font-family: monospace;
+  font-weight: lighter;
+  font-size: small;
+  display: flex;
+  justify-content: center;
+  margin-top: -1.25em;
+
+}
+
+
+
+  #navigation {
+    justify-content: space-between;
+    display: flex;
+    margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: darkolivegreen;
+    color: white;
+    font-family: monospace;
+    font-size: large;
+  } 
+
+  .body-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  body {
+    font-family: monospace;
+    text-align: center;
+}
+#game-container {
+    width: 500px;
+    height: 620px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color:  #c3e5b8;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 100px;
+}
+#plant {
+    position: relative;
+    top: 0px;
+    width: 300px;
+    height: auto;
+    margin-bottom: 5px;
+}
+#health-meter {
+    color: #333;
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+#careButton, #manipulateButton {
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 0.7em 1.4em 0.7em 1.1em;
+  color: white;
+  background: #ad5389;
+  background: linear-gradient(0deg, rgba(20,167,62,1) 0%, rgba(102,247,113,1) 100%);
+  border: none;
+  box-shadow: 0 0.7em 1.5em -0.5em #14a73e98;
+  letter-spacing: 0.05em;
+  border-radius: 20em;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  
+
+}
+
+.footer {
+  font-size: 10px;
+  position: relative;
+  margin-top: 5px;
+}
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    25% {
+      background-position: 25% 50%;
+    }
+    50% {
+      background-position: 50% 50%;
+    }
+    75% {
+      background-position: 75% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }

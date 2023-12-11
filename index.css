@@ -1,0 +1,445 @@
+/*
+  Typograph: https://www.deviantart.com/excessts/art/My-chemical-romance-55579208
+*/
+
+  @font-face {
+    font-family: "My Chemical Romance";
+    src:
+      local("My Chemical Romance"),
+      url("my-chemical-romance.woff2") format("woff2"),
+      url("my-chemical-romance.woff") format("woff");
+    font-display: swap;
+  }
+  
+:root {
+  --body-color: rgb(94, 137, 87);
+  --inner-color: silver;
+  --lcd-bgcolor: #b8b3af;
+  --buttons-color: rgb(52, 79, 52);
+  --width: 275px;
+  --height: 325px;
+  --title-font-size: 34px;
+  --break-shape: polygon(0 60%, 9% 38%, 10% 12%, 29% 15%, 47% 9%, 70% 14%, 84% 7%, 97% 20%, 91% 35%, 100% 58%, 92% 72%, 87% 92%, 68% 90%, 50% 100%, 40% 91%, 25% 94%, 9% 85%, 11% 77%);
+}
+
+body {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #18c8cb, #12ce60);
+  background-size: 400% 400%;
+  animation: gradient 20s ease infinite;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10em;
+}
+
+
+.tamagotchi {
+  background-color: var(--body-color);
+  width: var(--width);
+  height: var(--height);
+  border-radius: 300px / 410px 410px 300px 300px;
+  box-shadow: 
+    0 0 20px rgba(0, 0, 0, 0.75),
+    0 0 40px 15px rgba(0, 0, 0, 0.25) inset;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: "";
+    width: 50px;
+    height: 100px;
+    background: #fff4;
+    clip-path: ellipse(28px 80px at 0 50%);
+    filter: blur(32px);
+  }
+
+  &::before {
+    left: 0;
+    transform: scaleX(-1) rotate(-5deg);
+    
+  }
+
+  &::after {
+    right: 0;
+    transform: rotate(-5deg);
+  }
+
+  & .separation {
+    border-bottom: 7px solid #311;
+    width: 34%;
+    height: 25px;
+    position: absolute;
+  }
+  
+  & .left.separation {
+    left: 1px;
+    transform: translateY(30px) rotate(6deg);
+    border-radius: 50%;
+  }
+
+  & .right.separation {
+    right: 0;
+    transform: translateY(26px) rotate(-6deg);
+    border-radius: 50%;
+  }
+
+  & .name {
+    font-family: "My Chemical Romance", sans-serif;
+    font-size: var(--title-font-size);
+    font-variant: small-caps;
+    letter-spacing: -2px;
+    color: var(--buttons-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.75);
+    transform: translateY(15px);
+  
+  & .initial {
+    display:  inline-block;
+    transform: skewX(339deg) translate(6px);
+  }
+
+  & .m {
+    display: inline-block;
+    transform: skewX(342deg) translate(1px, 3px);
+  }
+
+  & .h {
+    display: inline-block;
+    font-size: calc(var(--title-font-size) * 1.3);
+  } 
+}
+
+  & .tamagotchi-inner {
+    background: #311;
+    width: calc(var(--width) * 0.62);
+    height: calc(var(--height) * 0.54);
+    clip-path: var(--break-shape);
+    transform: translate(4px, 0);
+    position: relative;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: var(--inner-color);
+      clip-path:  var(--break-shape);
+      transform: scale(0.95);
+    }
+
+    & .screen {
+      --border-radius: 10px;
+
+      width: 125px;
+      height: 120px;
+      background: var(--lcd-bgcolor);
+      position: absolute;
+      border-radius: var(--border-radius);
+      transform: translateY(4px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+
+    &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        box-shadow: 
+        0 0 10px rgba(0,0, 0, 0.5) inset,
+        0 0 5px 2px rgba(0, 0, 0, 0.25) inset;
+        position: absolute;
+        border-radius: var(--border-radius);
+        pointer-events: none;
+      }
+
+        & .top, 
+        & .bottom {
+          background: #a6a6a6;
+          height: 32px;
+          display: flex;
+          justify-content: space-around;
+          padding: 0 6px;
+        } 
+
+        & .middle {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+
+          & .pet {
+            width: 42%;
+            height: 100%;
+            transform: scale(0.8);
+
+            &::before {
+              --pet-color: #222;
+
+              content: "";
+              display: block;
+              width: 4px;
+              height: 4px;
+              box-shadow: 
+              16px 0px 0 var(--pet-color),
+              20px 0px 0 var(--pet-color),
+              24px 0px 0 var(--pet-color),
+              28px 0px 0 var(--pet-color),
+              32px 0px 0 var(--pet-color),
+              36px 0px 0 var(--pet-color),
+              12px 4px 0 var(--pet-color),
+              40px 4px 0 var(--pet-color),
+              8px 8px 0 var(--pet-color),
+              44px 8px 0 var(--pet-color),
+              4px 12px 0 var(--pet-color),
+              20px 12px 0 var(--pet-color),
+              32px 12px 0 var(--pet-color),
+              48px 12px 0 var(--pet-color),
+              4px 16px 0 var(--pet-color),
+              20px 16px 0 var(--pet-color),
+              32px 16px 0 var(--pet-color),
+              48px 16px 0 var(--pet-color),
+              4px 20px 0 var(--pet-color),
+              20px 20px 0 var(--pet-color),
+              32px 20px 0 var(--pet-color),
+              48px 20px 0 var(--pet-color),
+              8px 24px 0 var(--pet-color),
+              44px 24px 0 var(--pet-color),
+              12px 28px 0 var(--pet-color),
+              16px 28px 0 var(--pet-color),
+              20px 28px 0 var(--pet-color),
+              24px 28px 0 var(--pet-color),
+              28px 28px 0 var(--pet-color),
+              32px 28px 0 var(--pet-color),
+              36px 28px 0 var(--pet-color),
+              40px 28px 0 var(--pet-color),
+              20px 32px 0 var(--pet-color),
+              32px 32px 0 var(--pet-color),
+              20px 36px 0 var(--pet-color),
+              32px 36px 0 var(--pet-color),
+              20px 40px 0 var(--pet-color),
+              32px 40px 0 var(--pet-color),
+              20px 44px 0 var(--pet-color),
+              32px 44px 0 var(--pet-color),
+              24px 48px 0 var(--pet-color),
+              28px 48px 0 var(--pet-color);
+            animation: movePet 3s infinite steps(2);
+            }
+          }
+        
+
+        & .shit {
+          width: 36px;
+          height: 32px;
+          align-self: flex-end;
+          transform: translate(10px, 0) scale(0.6);
+
+          &::before {
+            content: "";
+            display: block;
+            width: 4px;
+            height: 4px;
+            animation: moveShit 1s infinite steps(2, jump-none);
+          }
+        }
+      }
+
+        & .item {
+          width: 20px;
+          height: 20px;
+          margin: 6px 5px;
+          opacity: 0.25;
+        }
+
+
+        & .food {
+          background: url(./icons/food.svg) no-repeat;
+        }
+
+        & .light {
+          background: url(./icons/light.svg) no-repeat;
+        }
+
+        & .game {
+          background: url(./icons/game.svg) no-repeat;
+        }
+
+        & .medkit {
+          background: url(./icons/medkit.svg) no-repeat;
+        }
+
+        & .bath {
+          background: url(./icons/bath.svg) no-repeat;
+        }
+
+        & .weight{
+          background: url(./icons/weight.svg) no-repeat;
+        }
+
+        & .angry {
+          background: url(./icons/angry.svg) no-repeat;
+        }
+
+        & .attention {
+          background: url(./icons/attention.svg) no-repeat;
+        }
+      }
+    }
+
+    & .buttons-container {
+      width: 40%;
+      height: 32px;
+      margin-top: 5px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+      & .button {
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: var(--buttons-color);
+        box-shadow:
+          0 0 4px 2px rgba(0, 0, 0, 0.75),
+          -2px -2px 4px rgba(0, 0, 0, 0.5) inset;
+  
+        &:active {
+          background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+          box-shadow:
+            0 0 4px 2px rgba(0, 0, 0, 0.75),
+            2px 2px 2px rgba(0, 0, 0, 0.25) inset;
+        }
+
+        &.middle {
+          align-self: flex-end;
+        }   
+      }
+    }
+
+
+        p {
+          align-items: center;
+          justify-content: center;
+          font-family: monospace;
+          text-align: justify;
+          display: flex;
+          position: relative;
+          top: 8em;
+        }
+  
+
+
+@keyframes movePet {
+  0% {
+    transform: translate(20px, 0);
+  }
+
+  25% {
+    transform: translate(0px, 0);
+  }
+
+  50% {
+    transform: translate(-20px, 0);
+  }
+
+  75% {
+    transform: translate(0px,0);
+  }
+
+  100% {
+    transform: translate(20px, 0);
+  }
+}
+
+@keyframes moveShit {
+  0% {
+    box-shadow:
+      32px 0 0 #000,
+      4px 4px 0 #000,
+      28px 4px 0 #000,
+      0 8px 0 #000,
+      32px 8px 0 #000,
+      4px 12px 0 #000,
+      16px 12px 0 #000,
+      16px 16px 0 #000,
+      20px 16px 0 #000,
+      8px 20px 0 #000,
+      12px 20px 0 #000,
+      16px 20px 0 #000,
+      24px 20px 0 #000,
+      4px 24px 0 #000,
+      8px 24px 0 #000,
+      12px 24px 0 #000,
+      16px 24px 0 #000,
+      20px 24px 0 #000,
+      28px 24px 0 #000,
+      4px 28px 0 #000,
+      8px 28px 0 #000,
+      12px 28px 0 #000,
+      16px 28px 0 #000,
+      20px 28px 0 #000,
+      24px 28px 0 #000,
+      28px 28px 0 #000;
+  }
+
+  100% {
+    box-shadow:
+      0 0 0 #000,
+      4px 4px 0 #000,
+      28px 4px 0 #000,
+      0 8px 0 #000,
+      32px 8px 0 #000,
+      16px 12px 0 #000,
+      28px 12px 0 #000,
+      16px 16px 0 #000,
+      20px 16px 0 #000,
+      8px 20px 0 #000,
+      12px 20px 0 #000,
+      16px 20px 0 #000,
+      24px 20px 0 #000,
+      4px 24px 0 #000,
+      12px 24px 0 #000,
+      16px 24px 0 #000,
+      20px 24px 0 #000,
+      24px 24px 0 #000,
+      28px 24px 0 #000,
+      4px 28px 0 #000,
+      8px 28px 0 #000,
+      12px 28px 0 #000,
+      16px 28px 0 #000,
+      20px 28px 0 #000,
+      24px 28px 0 #000,
+      28px 28px 0 #000;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 25% 50%;
+  }
+  50% {
+    background-position: 50% 50%;
+  }
+  75% {
+    background-position: 75% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}

@@ -1,0 +1,52 @@
+
+
+body {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #18c8cb, #12ce60);
+  background-size: 400% 400%;
+  animation: gradient 20s ease infinite;
+  height: 100vh;
+  
+}
+
+h1 {
+  font-family: monospace;
+  font-style:normal;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+
+  button {
+    justify-content: space-between;
+    display: flex;
+    margin-top: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: darkolivegreen;
+    color: white;
+    font-family: monospace;
+    font-size: large;
+  } 
+
+
+  p {
+    font-family: monospace;
+    font-size: 16px;
+    margin-left: 200px;
+    margin-right: 200px;
+    }
+
+
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
